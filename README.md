@@ -9,19 +9,19 @@ This includes:
 
 ---------------------------------------------------------------
 To run the tests locally
-`npm run wdio`
+* `npm run wdio`
 
 If you have issues regarding the chromedriver
-`npm install chromedriver@[chrome_version_here] --save-dev`
+* `npm install chromedriver@[chrome_version_here] --save-dev`
 
 To start the docker container
-`docker-compose -f ./docker/docker-compose.yml up -d`
+* `docker-compose -f ./docker/docker-compose.yml up -d`
 
-To run the tests in the docker container
-`npm run wdio:docker`
+To run the tests in the docker container\n
+* `npm run wdio:docker`
 
 To watch the execution, go to the following url
-`http://localhost:4444/ui#`
+* `http://localhost:4444/ui#`
 
 To start the docker container
-`docker-compose -f ./docker/docker-compose.yml down`
+* `docker-compose -f ./docker/docker-compose.yml down`
