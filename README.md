@@ -28,3 +28,6 @@ To watch the execution, go to the following url
 
 To start the docker container
 * `docker-compose -f ./docker/docker-compose.yml down`
+
+If you have issues when trying to see the report, go to the following url
+* `https://www.webmo.net/link/help/AccessingLocalFiles.html`
