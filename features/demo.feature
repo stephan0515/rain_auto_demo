@@ -13,6 +13,17 @@
 
 Feature: RAIN page demo
 
+  Scenario Outline: As a user, I can navigate to Blog Page
+
+    Given I am on the main page
+    Then I should see the hero message saying <MainHero>
+    When I click the nav bar page Blog
+    Then I should see the blog hero message saying <BlogHero>
+
+    Examples:
+      | MainHero            | BlogHero    |
+      | Earned Wage Access. | Rain's Blog |
+
   Scenario Outline: As a user, I can return to main page with bottom logo
 
     Given I am on the main page

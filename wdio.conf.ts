@@ -1,4 +1,5 @@
 import type { Options } from '@wdio/types'
+import allure from 'allure-commandline'
 
 export const config: Options.Testrunner = {
     //
@@ -134,7 +135,11 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec',['allure', {
+        outputDir: './testing-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -217,6 +222,7 @@ export const config: Options.Testrunner = {
      */
     // before: function (capabilities, specs) {
     // },
+
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {string} commandName hook command name
@@ -263,6 +269,11 @@ export const config: Options.Testrunner = {
      */
     // afterStep: function (step, scenario, result, context) {
     // },
+    afterStep: async function (step, scenario, { error, duration, passed }, context) {
+        if (error) {
+          await browser.takeScreenshot();
+        }
+      },
     /**
      *
      * Runs after a Cucumber Scenario.
@@ -283,7 +294,6 @@ export const config: Options.Testrunner = {
      */
     // afterFeature: function (uri, feature) {
     // },
-    
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
@@ -320,6 +330,26 @@ export const config: Options.Testrunner = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
+    onComplete: function() {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', './testing-results', '--clean', '-o', './testing-report'])
+        return new Promise<void>((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                15000)
+
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Testing report successfully generated')
+                resolve()
+            })
+        })
+    }
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
