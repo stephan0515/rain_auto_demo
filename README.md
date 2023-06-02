@@ -8,6 +8,9 @@ This includes:
 * demo.feature - test case in Gherkin that contains the bug found
 
 ---------------------------------------------------------------
+Node version suggested
+* `v16` or higher
+
 To run the tests locally
 * `npm run wdio`
 
