@@ -4,10 +4,6 @@ import MainPage from '../pageobjects/main.page.js';
 import MainNav from '../pageobjects/main.nav.js';
 import BlogPage from '../pageobjects/blog.page.js';
 
-// const pages = {
-//     login: LoginPage
-// }
-
 Given(/^I am on the main page$/, async () => {
     await MainPage.open()
 });

@@ -2,13 +2,7 @@ import { ChainablePromiseElement } from 'webdriverio';
 
 import Page from './page.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class MainNav extends Page {
-    /**
-     * define selectors using getter methods
-     */
 
     public get navAbout () {
         return $('nav.main-nav.w-nav-menu > a:nth-child(1)');
