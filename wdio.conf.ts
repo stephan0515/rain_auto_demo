@@ -139,7 +139,14 @@ export const config: Options.Testrunner = {
         outputDir: './testing-results',
         disableWebdriverStepsReporting: false,
         disableWebdriverScreenshotsReporting: false,
-    }]],
+    }],
+    ['junit', {
+        outputDir: './junit-reports',
+        outputFileFormat: function(options) { // optional
+            return `results-${options.cid}.xml`
+        }
+    }]
+],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.

@@ -132,3 +132,8 @@ dist
 # results and reports
 testing-report/
 testing-results/
+junit-reports/
+
+#Others
+.DS_Store
+package-lock.json
