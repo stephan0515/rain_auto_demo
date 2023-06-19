@@ -10,6 +10,7 @@ This includes:
 ---------------------------------------------------------------
 Node version suggested
 * `v16` or higher
+* `Java 8` for allure reports generator
 
 To run the tests locally
 * `npm run wdio`
