@@ -30,5 +30,8 @@ To watch the execution, go to the following url
 To start the docker container
 * `docker-compose -f ./docker/docker-compose.yml down`
 
-If you have issues when trying to see the report, go to the following url
-* https://www.webmo.net/link/help/AccessingLocalFiles.html
+If you have issues when trying to see the report, try the following command from terminal
+* "C:\Program Files\Opera\launcher.exe" --allow-file-access-from-files (Windows)
+* open -a "Chrome" --args --allow-file-access-from-files (Mac)
+
+Reference: https://www.webmo.net/link/help/AccessingLocalFiles.html
