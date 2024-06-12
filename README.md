@@ -31,7 +31,7 @@ To start the docker container
 * `docker-compose -f ./docker/docker-compose.yml down`
 
 If you have issues when trying to see the report, try the following command from terminal
-* "C:\Program Files\Chrome\Chrome.exe" --allow-file-access-from-files (Windows)
+* ""C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files (Windows)
 * open -a "Chrome" --args --allow-file-access-from-files (Mac)
 
 Reference: https://www.webmo.net/link/help/AccessingLocalFiles.html
