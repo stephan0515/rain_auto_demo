@@ -25,7 +25,7 @@ To run the tests in the docker container\n
 * `npm run wdio:docker`
 
 To watch the execution, go to the following url
-* http://localhost:4444/ui#
+* http://localhost:4444/ui
 
 To start the docker container
 * `docker-compose -f ./docker/docker-compose.yml down`
