@@ -12,7 +12,7 @@ export const config ={
             browserName: 'chrome',
             acceptInsecureCerts: true,
             'goog:chromeOptions': {
-              args: ['--disable-gpu', '--disable-dev-shm-usage']
+              args: ['--disable-gpu', '--disable-dev-shm-usage', '--start-maximized']
             }
           }
     ],
